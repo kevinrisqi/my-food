@@ -1,5 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:my_food/shared/theme.dart';
+import 'home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -15,9 +17,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Hello World'),
-      ),
       body: SafeArea(
         child: PageView(
           controller: _pageController,
@@ -27,7 +26,7 @@ class _MainPageState extends State<MainPage> {
             });
           },
           children: [
-            Center(child: Text('Home Page'),),
+            HomePage(),
             Center(child: Text('Notification Page'),),
             Center(child: Text('Favorite Page'),),
             Center(child: Text('Profile Page'),),
@@ -48,25 +47,25 @@ class _MainPageState extends State<MainPage> {
           BottomNavyBarItem(
             icon: Icon(Icons.home),
             title: Text('Home'),
-            activeColor: Color(0xff11AC6A),
+            activeColor: mainColor,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.notifications),
             title: Text('Notification'),
-            activeColor: Color(0xff11AC6A),
+            activeColor: mainColor,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.favorite),
             title: Text('Favorite'),
-            activeColor: Color(0xff11AC6A),
+            activeColor: mainColor,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.account_circle),
             title: Text('Profile'),
-            activeColor: Color(0xff11AC6A),
+            activeColor: mainColor,
             inactiveColor: Colors.grey,
           ),
         ],
