@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_food/shared/theme.dart';
+import 'package:my_food/widgets/category_selector.dart';
+import 'package:my_food/widgets/food_list_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +13,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,7 +49,28 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(10),
               color: Colors.grey.shade200,
             ),
-          )
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+              child:
+              TextField(
+                controller: searchController,
+                decoration: InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500),
+                    border: InputBorder.none,
+                    suffixIcon: Icon(Icons.search, color: Colors.grey,)
+                ),
+              ),
+            )
+          ),
+          SizedBox(
+            height: defaultMargin,
+          ),
+          CategorySelector(),
+          SizedBox(
+            height: defaultMargin,
+          ),
+          FoodListItem()
         ],
       ),
     );
