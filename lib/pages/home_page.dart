@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               margin: EdgeInsets.symmetric(horizontal: defaultMargin),
               child: Text(
-                'Popular Food',
+                'Fast Food',
                 style:
                 GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500),
               ),

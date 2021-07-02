@@ -11,86 +11,81 @@ class FoodListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: MediaQuery.of(context).size.width - 2 * defaultMargin,
-          height: 120,
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-          decoration: BoxDecoration(
-              color: lightGreyColor, borderRadius: BorderRadius.circular(8)),
-          child: Row(
+    return Container(
+      width: MediaQuery.of(context).size.width - 2 * defaultMargin,
+      height: 120,
+      margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+      decoration: BoxDecoration(
+          color: lightGreyColor, borderRadius: BorderRadius.circular(8)),
+      child: Row(
+        children: [
+          Container(
+            width: 70,
+            height: 70,
+            margin: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage(food.picturePath),
+                )),
+          ),
+          SizedBox(
+            width: 18,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 70,
-                height: 70,
-                margin: EdgeInsets.only(left: 20),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage(food.picturePath),
-                    )),
+              Text(
+                food.name,
+                style: GoogleFonts.poppins(
+                    fontSize: 14, fontWeight: FontWeight.w700),
+              ),
+              Text(
+                food.description,
+                style: GoogleFonts.poppins(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: greyColor,
+                ),
               ),
               SizedBox(
-                width: 18,
+                height: 8,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    food.name,
+                    'IDR ' + food.price.toString(),
                     style: GoogleFonts.poppins(
-                        fontSize: 14, fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    food.description,
-                    style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: greyColor,
-                    ),
+                        fontSize: 15, fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
-                    height: 8,
+                    width: MediaQuery.of(context).size.width - 2 * defaultMargin - 70 - 18  * 2 - 140 ,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        'IDR ' + food.price.toString(),
-                        style: GoogleFonts.poppins(
-                            fontSize: 15, fontWeight: FontWeight.w700),
+                  Container(
+                    width: 36,
+                    height: 36,
+                    margin: EdgeInsets.only(right: 20),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: mainColor,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/icon/add.png'),
+                            fit: BoxFit.cover),
                       ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width - 2 * defaultMargin - 70 - 18  * 2 - 150 ,
-                      ),
-                      Container(
-                        width: 36,
-                        height: 36,
-                        margin: EdgeInsets.only(right: 20),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: mainColor,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('assets/icon/add.png'),
-                                fit: BoxFit.cover),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ],
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }
