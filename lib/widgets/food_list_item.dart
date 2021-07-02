@@ -5,27 +5,15 @@ import 'package:my_food/models/food.dart';
 import 'package:my_food/shared/theme.dart';
 
 class FoodListItem extends StatelessWidget {
-  // final Food food;
+  final Food food;
 
-  // FoodListItem({required this.food});
+  FoodListItem(this.food);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: double.infinity,
-          margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-          child: Text(
-            'Popular Food',
-            style:
-                GoogleFonts.poppins(fontSize: 30, fontWeight: FontWeight.w500),
-          ),
-        ),
-        SizedBox(
-          height: 18,
-        ),
         Container(
           width: MediaQuery.of(context).size.width - 2 * defaultMargin,
           height: 120,
@@ -41,7 +29,7 @@ class FoodListItem extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/img/pizza.png'),
+                      image: AssetImage(food.picturePath),
                     )),
               ),
               SizedBox(
@@ -52,12 +40,12 @@ class FoodListItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Pizza',
+                    food.name,
                     style: GoogleFonts.poppins(
                         fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    'Delicious food 2021',
+                    food.description,
                     style: GoogleFonts.poppins(
                       fontSize: 12,
                       fontWeight: FontWeight.w600,
@@ -71,13 +59,17 @@ class FoodListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        'IDR 50.0000',
+                        'IDR ' + food.price.toString(),
                         style: GoogleFonts.poppins(
                             fontSize: 15, fontWeight: FontWeight.w700),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width - 2 * defaultMargin - 70 - 18  * 2 - 150 ,
                       ),
                       Container(
                         width: 36,
                         height: 36,
+                        margin: EdgeInsets.only(right: 20),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: mainColor,

@@ -21,9 +21,10 @@ class Food extends Equatable {
 
   @override
   // TODO: implement props
-  List<Object?> get props => [id, name, picturePath, description, price, category];
-
-  List<Food> mocksFood = [
+  List<Object?> get props =>
+      [id, name, picturePath, description, price, category];
+}
+  List<Food> mockFoods = [
     Food(
       id: 1,
       name: 'Pizza',
@@ -58,12 +59,10 @@ class Food extends Equatable {
     ),
     Food(
         id: 5,
-        name: 'Cake Strawberry',
-        picturePath: 'assets/img/cake_strawberry.png',
+        name: 'Chocolate Brownies',
+        picturePath: 'assets/img/choco_brownie.png',
         description: 'Delicious food 2020',
-        price: 20000,
+        price: 25000,
         category: FoodCategory.dessert
     ),
   ];
-
-}
