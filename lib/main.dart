@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_food/pages/food_details.dart';
 import 'package:my_food/pages/main_page.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: FoodDetails(),
     );
   }
 }
