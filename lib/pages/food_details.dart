@@ -11,6 +11,8 @@ class FoodDetails extends StatefulWidget {
 }
 
 class _FoodDetailsState extends State<FoodDetails> {
+  int qty = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,14 +23,19 @@ class _FoodDetailsState extends State<FoodDetails> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                      width: 25,
-                      height: 25,
-                      margin: EdgeInsets.symmetric(
-                          horizontal: defaultMargin, vertical: defaultMargin),
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/icon/back.png')))),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                        width: 25,
+                        height: 25,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: defaultMargin, vertical: defaultMargin),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/icon/back.png')))),
+                  ),
                   Container(
                       width: 15,
                       height: 15,
@@ -153,40 +160,54 @@ class _FoodDetailsState extends State<FoodDetails> {
                     SizedBox(height: 4),
                     Row(
                       children: [
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(7),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            shape: BoxShape.circle,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              qty--;
+                            });
+                          },
                           child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(7),
                             decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/icon/minus.png')),
+                              color: Colors.grey.shade200,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/icon/minus.png')),
+                              ),
                             ),
                           ),
                         ),
                         SizedBox(width: 16),
                         Text(
-                          '1',
+                          qty.toString(),
                           style: GoogleFonts.poppins(
                               fontSize: 20, fontWeight: FontWeight.w600),
                         ),
                         SizedBox(width: 16),
-                        Container(
-                          width: 35,
-                          height: 35,
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: mainColor,
-                            shape: BoxShape.circle,
-                          ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              qty++;
+                            });
+                          },
                           child: Container(
+                            width: 35,
+                            height: 35,
+                            padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: AssetImage('assets/icon/add.png')),
+                              color: mainColor,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/icon/add.png')),
+                              ),
                             ),
                           ),
                         ),
@@ -227,10 +248,10 @@ class _FoodDetailsState extends State<FoodDetails> {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            decoration:BoxDecoration(
-                              image: DecorationImage(image: AssetImage('assets/icon/favorite.png'))
-                            )
-                          ),
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/icon/favorite.png')))),
                         ),
                         SizedBox(width: 20),
                         Container(
@@ -242,10 +263,10 @@ class _FoodDetailsState extends State<FoodDetails> {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                              decoration:BoxDecoration(
-                                  image: DecorationImage(image: AssetImage('assets/icon/cart_white.png'))
-                              )
-                          ),
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/icon/cart_white.png')))),
                         ),
                       ],
                     ),
