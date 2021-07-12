@@ -159,7 +159,7 @@ class SignInPage extends StatelessWidget {
                       decoration: TextDecoration.underline,
                       decorationThickness: 2,
                     ),
-                  )
+                  ),
                 ],
               ),
             )
