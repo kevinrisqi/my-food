@@ -37,57 +37,56 @@ class FoodListItem extends StatelessWidget {
             SizedBox(
               width: 18,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  food.name,
-                  style: GoogleFonts.poppins(
-                      fontSize: 14, fontWeight: FontWeight.w700),
-                ),
-                Text(
-                  food.description,
-                  style: GoogleFonts.poppins(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: greyColor,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    food.name,
+                    style: GoogleFonts.poppins(
+                        fontSize: 14, fontWeight: FontWeight.w700),
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Text(
-                      'IDR ' + food.price.toString(),
-                      style: GoogleFonts.poppins(
-                          fontSize: 15, fontWeight: FontWeight.w700),
+                  Text(
+                    food.description,
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: greyColor,
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - 2 * defaultMargin - 70 - 18  * 2 - 140 ,
-                    ),
-                    Container(
-                      width: 36,
-                      height: 36,
-                      margin: EdgeInsets.only(right: 20),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: mainColor,
-                        shape: BoxShape.circle,
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'IDR ' + food.price.toString(),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, fontWeight: FontWeight.w700),
                       ),
-                      child: Container(
+                      Container(
+                        width: 36,
+                        height: 36,
+                        margin: EdgeInsets.only(right: 20),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/icon/add.png'),
-                              fit: BoxFit.cover),
+                          color: mainColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/icon/add.png'),
+                                fit: BoxFit.cover),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

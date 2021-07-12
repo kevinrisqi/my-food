@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_food/shared/theme.dart';
 
 class CartPage extends StatefulWidget {
-  const CartPage({Key? key}) : super(key: key);
-
   @override
   _CartPageState createState() => _CartPageState();
 }
@@ -32,29 +30,46 @@ class _CartPageState extends State<CartPage> {
                   Text(
                     'Cart',
                     style: GoogleFonts.poppins(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
+                        fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   Image.asset(
                     "assets/icon/dot.png",
                     width: 15,
                     height: 15,
-                  )
+                  ),
                 ],
               ),
             ),
             Container(
-              child: Row(
+              margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+              child: Column(
                 children: [
                   Image.asset(
-                    "assets/img/hamburger.png",
                     width: 100,
                     height: 100,
                   ),
+                  SizedBox(
+                    width: 14,
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Hamburger'),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text('Best Food in 2021'),
+                            Text('Best Food in 2021'),
+                          ],
+                        ),
+                        Text('IDR 30000'),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

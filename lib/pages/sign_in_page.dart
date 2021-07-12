@@ -101,12 +101,14 @@ class SignInPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Image.asset(
-                        'assets/icon/google.png',
-                        width: 40,
-                        height: 40,
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 6),
+                        child: Image.asset(
+                          'assets/icon/google.png',
+                          width: 40,
+                          height: 40,
+                        ),
                       ),
                       Text('Google'),
                     ],
@@ -121,12 +123,14 @@ class SignInPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Image.asset(
-                        'assets/icon/facebook.png',
-                        width: 35,
-                        height: 35,
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 12),
+                        child: Image.asset(
+                          'assets/icon/facebook.png',
+                          width: 35,
+                          height: 35,
+                        ),
                       ),
                       Text('Facebook'),
                     ],
