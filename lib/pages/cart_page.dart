@@ -66,8 +66,8 @@ class _CartPageState extends State<CartPage> {
                   ),
                   Image.asset(
                     "assets/img/hamburger.png",
-                    width: 75,
-                    height: 75,
+                    width: 60,
+                    height: 60,
                   ),
                   SizedBox(
                     width: 14,
@@ -164,7 +164,7 @@ class _CartPageState extends State<CartPage> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
