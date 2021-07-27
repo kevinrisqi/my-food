@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_food/pages/cart_page.dart';
-import 'package:my_food/pages/home_page.dart';
-import 'package:my_food/pages/main_page.dart';
+import 'package:my_food/pages/sign_in_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CartPage(),
-      // home: MainPage(),
+      home: SignInPage(),
     );
   }
 }
